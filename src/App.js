@@ -1,10 +1,11 @@
 
 import WriteBoard from './Component/WriteBoard';
-
+import DataBoard from './Component/DataBoard';
 function App() {
   return (
-    <div className="App">
-      <WriteBoard />
+    <div >
+      <DataBoard />
+      {/* <WriteBoard /> */}
     </div>
   );
 }

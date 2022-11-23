@@ -90,7 +90,7 @@ class WriteBoard extends Component {
                                 <label for='file'>파일첨부</label>
                             </td>
                             <td className='td_right'>
-                                <input type='file' name='file' id='file' onChange={this.fileChange} />
+                                <input type='file' name='file' id='file' onChange={this.fileChange} accept='image/*' />
                             </td>
                         </tr>
 
