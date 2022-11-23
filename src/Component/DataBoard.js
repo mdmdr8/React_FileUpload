@@ -16,7 +16,7 @@ class DataBoard extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('http://localhost:8090/boarddata/5')
+        axios.get('http://localhost:8090/boarddata/6')
             .then((response) => {
                 const board = response.data;
                 this.setState({ writer: board.writer, subject: board.subject, content: board.content, imageUrl: 'http://localhost:8090/img/' + board.filename });

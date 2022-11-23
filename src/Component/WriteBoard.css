@@ -19,9 +19,5 @@ table {
 }
 
 #commandCell {
-    display: inline-block;
-    justify-content: center;
-    margin: 0px 210px;
-    width: 450px;
     text-align: center;
 }
