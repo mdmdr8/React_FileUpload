@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+}
+
+table {
+    margin:10px auto;
+    width:450px;
+    background-color: antiquewhite;
+}
+
+.td_left{
+    width: 150px;
+    background-color: pink;
+}
+
+.td_right{
+    width: 300px;
+    background-color: skyblue;
+}
+
+#commandCell {
+    display: inline-block;
+    justify-content: center;
+    margin: 0px 210px;
+    width: 450px;
+    text-align: center;
+}
