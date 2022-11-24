@@ -15,10 +15,19 @@ class WriteBoard extends Component {
             file: null,
         }
     }
+
+    change = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({ [name]: value });
+    }
+
+
     submit = (e) => {
         e.preventDefault();
         // js에서 제공하는 객체
         const formData = new FormData();
+        // 첫번쨰 인자ㅏ name 이고 뒤가 value
         formData.append('writer', this.state.writer);
         formData.append('password', this.state.password);
         formData.append('subject', this.state.subject);
@@ -36,11 +45,7 @@ class WriteBoard extends Component {
             })
     }
 
-    change = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        this.setState({ [name]: value });
-    }
+
 
     fileChange = (e) => {
         this.setState({ file: e.target.files[0] })

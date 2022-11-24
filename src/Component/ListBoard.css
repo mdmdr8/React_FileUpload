@@ -1,0 +1,14 @@
+h2{
+    text-align: center;
+}
+
+.table_list {
+    margin: auto;
+    width:950px;
+}
+
+#tr_top{
+    background-color: pink;
+    text-align: center;
+
+}
