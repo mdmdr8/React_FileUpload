@@ -3,7 +3,7 @@ import './WriteBoard.css';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 
-//  useParams가 객체라서 {id}gowna
+//  useParams가 객체라서 {id} 객체로 묶어줌
 function DataBoard() {
     const [detail, setData] = useState({ writer: '', subject: '', content: '', imageUrl: '' });
 
@@ -50,15 +50,15 @@ function DataBoard() {
 
     return (
         <section>
-            <h2>게시판 글등록</h2>
+            <h2>게시판 글보기</h2>
             <form>
                 <table>
                     <tr>
                         <td className='td_left'>
-                            <label for='writer'>글쓴이</label>
+                            <label for='id'>번호</label>
                         </td>
                         <td className='td_right'>
-                            <input type='text' name='writer' id='writer' value={detail.writer} readOnly></input>
+                            <input type='text' name='writer' id='writer' value={id} readOnly></input>
                         </td>
                     </tr>
 
@@ -89,7 +89,7 @@ function DataBoard() {
 
                 </table>
                 <section id='commandCell'>
-                    <a href="#">수정</a>&nbsp;&nbsp;
+                    <a href={"/update/" + id}>수정</a>&nbsp;&nbsp;
                     <a href="#">삭제</a>
                 </section>
             </form>

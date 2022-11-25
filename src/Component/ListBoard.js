@@ -4,14 +4,14 @@ import './ListBoard.css';
 import { Link } from 'react-router-dom';
 //목록 조회
 function ListBoard() {
-    const [boards, setBords] = useState([]);
+    const [boards, setBoards] = useState([]);
     // const [acc, accAll] = useState({id:'', name:'', balance:0});
 
     //componentdidmount와 같은 기능
     useEffect(() => {
         axios.get('http://localhost:8090/boardlist').then((response) => {
-            console.log(response.data)
-            setBords(response.data);
+            // console.log(response.data)
+            setBoards(response.data);
         }).catch((error) => {
             console.log(error);
         })
@@ -23,6 +23,7 @@ function ListBoard() {
     return (
         <>
             <h2> 글 목록 <Link to={"/writeboard"}>게시판 글쓰기</Link> </h2>
+
             <section>
                 <table className='table_list'>
                     <tbody>
@@ -34,7 +35,7 @@ function ListBoard() {
                         {
                             boards.map((board) => {
                                 return (<tr key={board.id}>
-                                    <td>{board.id}</td>
+                                    <td >  <Link to={`/boarddata/${board.id}`}>{board.id}</Link> </td>
                                     <td>{board.writer}</td>
                                     <td>{board.subject}</td>
                                 </tr>)

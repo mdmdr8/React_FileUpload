@@ -25,9 +25,9 @@ class WriteBoard extends Component {
 
     submit = (e) => {
         e.preventDefault();
-        // js에서 제공하는 객체
+        // js에서 제공하는 객체 FormData()
         const formData = new FormData();
-        // 첫번쨰 인자ㅏ name 이고 뒤가 value
+        // 첫번쨰 인자가 name 이고 뒤가 value
         formData.append('writer', this.state.writer);
         formData.append('password', this.state.password);
         formData.append('subject', this.state.subject);
@@ -36,7 +36,7 @@ class WriteBoard extends Component {
 
 
 
-        axios.post('http://localhost:8090/writeboard', formData)
+        axios.post('http://localhost:8090/writeboard2', formData)
             .then((Response) => {
                 alert(Response.data);
             })
