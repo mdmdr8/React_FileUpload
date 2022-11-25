@@ -24,14 +24,15 @@ function BoardUpdate() {
 
 
     const re_change = (e) => {
-
-        setUpdate(e.target.value);
+        const name = e.target.name;
+        const value = e.target.value;
+        setUpdate({ ...update, [name]: value });
     }
 
     const submit = (e) => {
-        e.preventDeafault();
+        e.preventDefault();
         axios.put(`http://localhost:8090/update/${id}`, null,
-            { params: { writer: update.writer, subject: update.subject, content: update.content } })
+            { params: { subject: update.subject, content: update.content } })
             .then((response) => {
                 alert(response.data);
                 document.location.href = '/';
@@ -89,7 +90,7 @@ function BoardUpdate() {
 
                 </table>
                 <section id='commandCell'>
-                    <button onClick={submit} ><a href={"/boarddata" + id}>수정 완료</a></button> &nbsp;&nbsp;
+                    <button onClick={submit} >수정 완료</button> &nbsp;&nbsp;
                 </section>
             </form >
         </section >
