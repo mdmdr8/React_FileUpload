@@ -22,7 +22,15 @@ class WriteBoard extends Component {
         this.setState({ [name]: value });
     }
 
-
+    handlereset = (e) => {
+        this.setState({
+            writer: '',
+            password: '',
+            subject: '',
+            content: '',
+            file: null,
+        })
+    }
 
     submit = (e) => {
         e.preventDefault();
@@ -104,7 +112,7 @@ class WriteBoard extends Component {
                     </table>
                     <section id='commandCell'>
                         <button onClick={this.submit}>등록</button>&nbsp;&nbsp;
-                        <input type='reset' value='다시쓰기' />
+                        <button onClick={this.handlereset}>다시 쓰기</button>
                     </section>
                 </form>
             </section>
