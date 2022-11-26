@@ -7,7 +7,7 @@ function DeleteBoard() {
 
     const [password, setPassword] = useState('');
     const deleteBtn = (e) => {
-
+        // axios.메소드('url', data, params:{키(name):값(value)})
         axios.put(`http://localhost:8090/delete/${id}`, null,
             {
                 params: { password: password }

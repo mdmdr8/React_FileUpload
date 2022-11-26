@@ -11,6 +11,7 @@ function BoardPage() {
         startPage: 0,
         endPage: 0
     })
+
     const [boards, setBoards] = useState([])
 
 
@@ -47,7 +48,7 @@ function BoardPage() {
                             <th>작성자</th>
                             <th>제목</th>
                         </tr>
-
+                        {/* 여러자료를 전달할 때 map을 사용 */}
                         {boards.map((board) => (
                             <tr key={board.id}>
                                 <td><Link to={'/boarddata/' + board.id}> {board.id} </Link></td>

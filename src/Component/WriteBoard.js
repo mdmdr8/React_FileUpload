@@ -23,6 +23,7 @@ class WriteBoard extends Component {
     }
 
 
+
     submit = (e) => {
         e.preventDefault();
         // js에서 제공하는 객체 FormData()
@@ -39,6 +40,7 @@ class WriteBoard extends Component {
         axios.post('http://localhost:8090/writeboard2', formData)
             .then((Response) => {
                 alert(Response.data);
+                document.location.href = '/';
             })
             .catch((error) => {
 
